@@ -237,6 +237,7 @@ if (config_json["ssl"]["enable"])
     ssl_settings->set_private_key(ssl_key);
     ssl_settings->set_certificate(ssl_crt);
     ssl_settings->set_temporary_diffie_hellman(dh_pem);
+    ssl_settings->set_bind_address("wallet.x-cash.org");
 
     settings->set_ssl_settings(ssl_settings);
 
