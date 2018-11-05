@@ -33,7 +33,7 @@ USE `xcashdb`;
 
 DROP TABLE IF EXISTS `Accounts`;
 CREATE TABLE `Accounts` (
-  `id` bigint(10) UNSIGNED NOT NULL,
+  `id` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `address` varchar(127) NOT NULL,
   `viewkey_hash` char(64) NOT NULL,
   `scanned_block_height` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -109,11 +109,9 @@ CREATE TABLE `Payments` (
   `request_fulfilled` tinyint(1) NOT NULL DEFAULT '0',
   `payment_address` varchar(127) NOT NULL,
   `import_fee` bigint(20) NOT NULL,
-  `payment_address` varchar(95) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `account_id` (`account_id`) USING BTREE,
   UNIQUE KEY `payment_id` (`payment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -165,12 +163,6 @@ ALTER TABLE `Inputs`
 ALTER TABLE `Outputs`
   ADD CONSTRAINT `account_id3_FK` FOREIGN KEY (`account_id`) REFERENCES `Accounts` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `transaction_id_FK` FOREIGN KEY (`tx_id`) REFERENCES `Transactions` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `Payments`
---
-ALTER TABLE `Payments`
-  ADD CONSTRAINT `account_id` FOREIGN KEY (`account_id`) REFERENCES `Accounts` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `Transactions`
