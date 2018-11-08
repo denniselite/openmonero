@@ -16,7 +16,6 @@ var config = {
     subAddressPrefix: 42,
     addressPrefixTestnet: 0x16871e,
     integratedAddressPrefixTestnet: 54,
-
     subAddressPrefixTestnet: 63,
     addressPrefixStagenet: 24,
     integratedAddressPrefixStagenet: 25,
@@ -24,7 +23,7 @@ var config = {
     feePerKB: new JSBigInt('2000000000'),//20^10 - not used anymore, as fee is dynamic.
     dustThreshold: new JSBigInt('1000000000'),//10^10 used for choosing outputs/change - we decompose all the way down if the receiver wants now regardless of threshold
     txChargeRatio: 0.5,
-    defaultMixin: 10, // minimum mixin for hardfork v8 is 10 (ring size 11)
+    defaultMixin: 20, // minimum mixin for hardfork v8 is 10 (ring size 11)
     txChargeAddress: '',
     idleTimeout: 30,
     idleWarningDuration: 20,

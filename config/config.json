@@ -1,22 +1,22 @@
 {
   "daemon-url" :
   {
-    "_comment" : "RPC urls to monero deamon",
+    "_comment" : "RPC urls to X-CASH deamon",
     "mainnet"  : "http://127.0.0.1:18081",
     "testnet"  : "http://127.0.0.1:28081",
     "stagenet" : "http://127.0.0.1:38081"
   },
   "blockchain-path" :
   {
-    "_comment" : "if paths are empty, default Monero paths will be used",
-    "mainnet"  : "",
+    "_comment" : "if paths are empty, default X-CASH paths will be used",
+    "mainnet"  : "/home/ubuntu/.X-CASH/lmdb",
     "testnet"  : "",
     "stagenet" : ""
   },
   "database" :
   {
     "_comment" : "how should the backend connect to the mysql database",
-    "url"      : "172.17.0.2",
+    "url"      : "127.0.0.1",
     "port"     : 3306,
     "dbname"   : "xcashdb",
     "user"     : "root",
@@ -25,9 +25,9 @@
   "database_test":
   {
     "_comment" : "how should the backend connect to the test mysql database",
-    "url"      : "172.17.0.2",
+    "url"      : "127.0.0.1",
     "port"     : 3306,
-    "dbname"   : "openmonero_test",
+    "dbname"   : "xcashdb_test",
     "user"     : "root",
     "password" : "root"
   },
@@ -37,18 +37,18 @@
     "fee"     : 0,
     "testnet" :
     {
-      "address" : "",
+      "address" : "XCA1ustweXpj9HkV7KZisk8xfpdppLjAWTXk7qMPbkfd5NkBBbVCawcVb8sAQKuCqiVYgZcuUAFYgKrMrweyiApZ37q2RXpeiq",
       "viewkey" : ""
     },
     "mainnet" :
     {
       "_comment": "these are official monero project donation address and viewkey. change it to yours",
-      "address" : "",
+      "address" : "XCA1ustweXpj9HkV7KZisk8xfpdppLjAWTXk7qMPbkfd5NkBBbVCawcVb8sAQKuCqiVYgZcuUAFYgKrMrweyiApZ37q2RXpeiq",
       "viewkey" : ""
     },
     "stagenet" :
     {
-      "address" : "",
+      "address" : "XCA1ustweXpj9HkV7KZisk8xfpdppLjAWTXk7qMPbkfd5NkBBbVCawcVb8sAQKuCqiVYgZcuUAFYgKrMrweyiApZ37q2RXpeiq",
       "viewkey" : ""
     }
   },
