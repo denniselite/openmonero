@@ -163,12 +163,12 @@ thinwalletCtrls.controller('SendCoinsCtrl', function($scope, $http, $q,
         $scope.sent_tx = {};
     };
 
-    $scope.sendCoins = function(targets, mixin, payment_id) {
+    $scope.sendCoins = function(targets, payment_id) {
         if ($scope.submitting) return;
         $scope.status = "";
         $scope.error = "";
         $scope.submitting = true;
-        mixin = parseInt(mixin);
+        var mixin = parseInt($scope.mixins);
         var rct = true; //maybe want to set this later based on inputs (?)
         var realDsts = [];
         var targetPromises = [];
